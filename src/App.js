@@ -69,11 +69,9 @@ function App(props) {
     />
   ));
 
-  
-
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(tasks));
-    console.log(JSON.parse(localStorage.getItem("todos")));
+    
   }, [tasks]);
 
   return (
@@ -81,7 +79,6 @@ function App(props) {
       <h1>#Todo</h1>
       <Form addTask={addTask} />
       <div className="filters btn-group stack-exception flex">{filterList}</div>
-
       <div
         role="list"
         className="todo-list stack-large stack-exception"

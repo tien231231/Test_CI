@@ -3,9 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App.js";
 
-import FilterButton from "./components/FilterButton";
 
-const todoDetails = JSON.parse(localStorage.getItem("todos"));
+const todoDetails = JSON.parse(localStorage.getItem("todos")) || [
+  { id: "todo-0", name: "Luyen Code", completed: false },
+  
+];
 
 const FILTER_MAP = {
   All: () => true,

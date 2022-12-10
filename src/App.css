@@ -1,6 +1,5 @@
 :root {
   --background: --white;
-  --grey: black;
   --text: black;
   --background-hover: #cfcbd3;
   
@@ -49,7 +48,8 @@ h1 {
   padding: 0.5rem;
   border-radius: .5rem;
   background-color: var(--background);
-  color: var(--text)
+  color: var(--text);
+  
 }
 
 .submitButton:hover {
@@ -78,6 +78,7 @@ h1 {
 
 .btn:active {
   outline-style: none;
+  
 }
 
 .c-cb {
@@ -109,4 +110,8 @@ todo-list {
 label {
   word-wrap:break-word;
 
+}
+
+.filters {
+  padding-top: 30px;
 }
