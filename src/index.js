@@ -5,7 +5,7 @@ import App from "./App.js";
 
 
 const todoDetails = JSON.parse(localStorage.getItem("todos")) || [
-  { id: "todo-0", name: "Luyen Code", completed: false },
+  { id: "1", name: "Luyen Code", completed: false },
   
 ];
 

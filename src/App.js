@@ -1,9 +1,9 @@
 import './Style/App.css'
 import Todo from "./components/Todo";
 import Form from "./components/Form";
-import FilterButton from "./components/FilterButton";
+
 import React, { useEffect, useState } from "react";
-import { nanoid } from "nanoid";
+
 
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
@@ -12,7 +12,7 @@ function App(props) {
   const addTask = (name) => {
     if (name === "") return;
     const newTask = {
-      id: `task-${nanoid()}`,
+      id: Math.floor(Math.random() * 1000),
       name: name,
       completed: false,
     };
@@ -59,14 +59,7 @@ function App(props) {
       />
     ));
 
-  const filterList = props.FILTER_NAMES.map((name) => (
-    <FilterButton
-      key={name}
-      name={name}
-      isPressed={name === filter}
-      setFilter={setFilter}
-    />
-  ));
+  
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(tasks));
@@ -77,7 +70,29 @@ function App(props) {
     <div className="todoapp">
       <h1>#Todo</h1>
       <Form addTask={addTask} />
-      <div className="filters btn-group stack-exception flex">{filterList}</div>
+      <div className="filters btn-group stack-exception flex">
+        <button
+        type="button"
+        className="btn flex1"
+        onClick={() => setFilter('All')}
+  >     
+        <span>All tasks</span>
+      </button>
+      <button
+        type="button"
+        className="btn flex1"
+        onClick={() => setFilter('Active')}
+  >     
+        <span>Active tasks</span>
+      </button>
+      <button
+        type="button"
+        className="btn flex1"
+        onClick={() => setFilter('Completed')}
+  >     
+        <span>Completed tasks</span>
+      </button>
+        </div>
       <div
         role="list"
         className="todo-list stack-large stack-exception"
