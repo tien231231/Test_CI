@@ -1,4 +1,4 @@
-import "./App.css";
+import './Style/App.css'
 import Todo from "./components/Todo";
 import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
