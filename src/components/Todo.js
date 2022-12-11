@@ -1,17 +1,11 @@
 import React, { useState } from "react";
 
 export default function Todo(props) {
-  console.log("props.name:" + props.name);
   const [newName, setNewName] = useState(props.name);
-  console.log("newName:" + newName);
-  console.log("props.completed:" + props.completed);
-
   function handleChange(e) {
     setNewName(e.target.value);
   }
-
   function handleSubmit(e) {
-    console.log("handling submit");
     e.preventDefault();
     props.editTask(props.id, newName);
     setNewName("");
