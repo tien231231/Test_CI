@@ -84,20 +84,20 @@ h1 {
   
 }
 
-.c-cb {
+.c {
   display: flex;
   align-content: center;
   font-size: 1.6rem;
   
 }
 
-.c-cb label {
+.c label {
   vertical-align: center;
   flex:1;
   margin: auto ;
 }
 
-.c-cb > input[type="checkbox"] {
+.c > input[type="checkbox"] {
   width: 1.5rem;
   height: 1.5rem;
   background: none;

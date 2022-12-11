@@ -15,45 +15,29 @@ export default function Todo(props) {
   const [isEditing, setEditing] = useState(false);
 
   const editingTemplate = (
-    <form className="stack-small" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div className="form-group">
         <label className="todo-label" htmlFor={props.id}></label>
-        <input
-          id={props.id}
-          className="todo-text todoinput"
-          type="text"
-          value={newName}
-          onChange={handleChange}
-        />
+        <input id={props.id} className="todoinput" type="text" value={newName} onChange={handleChange}/>
       </div>
       <div className="btn-group">
-        <button
-          type="button"
-          className="btn todo-cancel"
+        <button type="button" className="btn" 
           onClick={() => {
             setNewName(props.name);
             setEditing(false);
-          }}
-        >
-          Cancel
-        </button>
-        <button
-          type="submit"
-          className="btn btn__primary todo-edit"
+          }}>Cancel</button>
+        <button type="submit" className="btn"
           onClick={() => {
             props.editTask(props.id, newName);
             setEditing(false);
-          }}
-        >
-          Save
-        </button>
+          }} >Save</button>
       </div>
     </form>
   );
 
-  const viewTemplate = (
-    <div className="todo stack-small">
-      <div className="c-cb">
+  const view = (
+    <div className="todo">
+      <div className="c">
         <input
           id={props.id}
           type="checkbox"
@@ -77,7 +61,7 @@ export default function Todo(props) {
         </button>
         <button
           type="button"
-          className="btn btn__danger"
+          className="btn"
           onClick={() => {
             props.deleteTask(props.id);
           }}
@@ -88,5 +72,5 @@ export default function Todo(props) {
     </div>
   );
 
-  return isEditing ? editingTemplate : viewTemplate;
+  return isEditing ? editingTemplate : view;
 }

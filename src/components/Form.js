@@ -2,12 +2,11 @@ import React, { useState } from "react";
 
 function Form(props) {
   const [name, setName] = useState("");
-
+  
   function handleSubmit(e) {
     e.preventDefault();
     props.addTask(name);
-    console.log(name);
-    setName("");
+   setName("");
   }
 
   function handleChange(e) {
@@ -33,6 +32,4 @@ function Form(props) {
       </div>
     </form>
   );
-}
-
-export default Form;
+}export default Form;
